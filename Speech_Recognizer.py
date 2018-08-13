@@ -38,7 +38,7 @@ def subm(a):
         #Label(savp, text="Please wait...").grid(row=1, column=0, sticky="ew")
         prog = Text(savp, height=10, width=40, bd=5, font=("Times", 20))
         prog.grid(row=2, columnspan=3, sticky="ew")
-        print("txtpps - ", textpops)
+        # print("txtpps - ", textpops)
         prog.insert(INSERT, "           Recognition in progress, Please wait!    \n")
         prog.insert(INSERT, "                                 Loading!    \n")
         start = time.time()
@@ -63,7 +63,7 @@ def subm(a):
             try:
                 text = r.recognize_google(audio, language='en-IN')
                 textpops = text
-                print("Speakeng - ",textpops)
+                # print("Speakeng - ",textpops)
                 text = text + "\n"
                 eng.insert(INSERT, text)
             except sr.UnknownValueError:
@@ -75,7 +75,7 @@ def subm(a):
                 eng.insert(INSERT,"---")
             t1.join()
 
-            print("\nt1 still alive - ", t1.is_alive())
+            # print("\nt1 still alive - ", t1.is_alive())
     def speakhin(a):
         with sr.Microphone(device_index=device_id, sample_rate=sample_rate, chunk_size=chunk_size) as source:
             # Adjusting noise level
@@ -87,7 +87,7 @@ def subm(a):
             try:
                 text = r.recognize_google(audio, language='hi-IN')
                 textpops = text
-                print("Speakhin - ", textpops)
+                # print("Speakhin - ", textpops)
                 text = text + "\n"
                 hin.insert(INSERT, text)
             except sr.UnknownValueError:
@@ -98,7 +98,7 @@ def subm(a):
                 hin.insert(INSERT,"Could not request results from Google Speech Recognition service; {0}".format(e))
                 hin.insert(INSERT,"---")
             t1.join()
-            print("\nt1 still alive - ", t1.is_alive())
+            # print("\nt1 still alive - ", t1.is_alive())
     def cleareng(a):
         eng.delete(1.0, END)
     def clearhin(a):
@@ -116,9 +116,9 @@ def subm(a):
             e = entries["save_file_name"]
             name = str(e.get())
             input = eng.get("1.0", 'end-1c')
-            print(name)
+            # print(name)
             loc = location + "/" + name + ".txt"
-            print("\nFinal loc\n", loc)
+            # print("\nFinal loc\n", loc)
             f = open(loc, 'w')
             f.write(input)
             f.close()
@@ -156,9 +156,9 @@ def subm(a):
             e = entries["save_file_name"]
             name = str(e.get())
             input = hin.get("1.0", 'end-1c')
-            print(name)
+            # print(name)
             loc = location + "/" + name + ".txt"
-            print("\nFinal loc\n", loc)
+            # print("\nFinal loc\n", loc)
             f = open(loc, 'w', encoding="utf-8")
             f.write(input)
             f.close()
@@ -230,9 +230,9 @@ def genlist(a):
         temp = temp + " - " + microphone_name + "\n"
         li = li + temp
         j += 1
-    print("\ngenlist's --\n",li)
+    # print("\ngenlist's --\n",li)
     e = textbs["miclist"]
-    print("\ninslist's --\n", li)
+    # print("\ninslist's --\n", li)
     e.insert(INSERT, li)
 
 popup = Tk()
