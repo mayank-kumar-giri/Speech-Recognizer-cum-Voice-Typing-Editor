@@ -32,4 +32,8 @@ Follow the steps below for using -
 
 * To Save the content of any box click on the corresponding `Save English/Hindi` button. In the `Save Transcript` pop-up, click on `Browse` to select the desired folder to save in, Enter the name of the new file you wanna save and click on `Save` to save the file.
 
+<p align="center">
+  <img src="4.png" width="100%"/>
+</p>
+
 * At any point of time, clck on `Exit` to quit the application.
